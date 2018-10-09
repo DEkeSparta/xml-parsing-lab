@@ -7,7 +7,7 @@ describe "XML menu" do
   end
 
   it "no price should be more than £10" do
-    pending
+    expect(@xml_menu.get_prices.max).to be < 10
   end
 
   it "should have no item with calories over 1000 except for the full breakfast" do
