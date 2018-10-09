@@ -24,7 +24,29 @@ class GuiseppesMenu
     return @menu.xpath("//food")
   end
 
+  def get_food_name food
+    return food.xpath("name").text
+  end
+
+  def get_food_calories food
+    return food.xpath("calories").text.to_f
+  end
+
+  def are_calories_below_except? amount, exception
+    get_foods.each do |food|
+      if get_food_name(food).downcase != exception.downcase
+        if get_food_calories(food) > amount
+          return false
+        end
+      end
+    end
+    return true
+  end
+
 end
 
 xml = GuiseppesMenu.new
-puts xml.get_foods
+foods = xml.get_foods
+
+puts xml.get_food_name(foods.first)
+puts xml.get_food_calories(foods.first)

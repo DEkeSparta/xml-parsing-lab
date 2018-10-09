@@ -12,7 +12,7 @@ describe "XML menu" do
 
   it "should have no item with calories over 1000 except for the full breakfast" do
     # Consider children element methods - Remember to step through the data and print out to the command line if you need it
-    pending
+    expect(@xml_menu.are_calories_below_except?(1000, "full breakfast")).to be true
   end
 
   it "should have all waffle dishes stating you get two waffles" do
