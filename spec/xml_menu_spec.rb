@@ -17,7 +17,7 @@ describe "XML menu" do
 
   it "should have all waffle dishes stating you get two waffles" do
     # Consider children element methods - Remember to step through the data and print out to the command line if you need it
-    pending
+    expect(@xml_menu.do_all_waffle_dishes_have_two_waffles?).to be true
   end
 
 end
